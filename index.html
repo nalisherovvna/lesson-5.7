@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        .number {
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            color: white;
+        }
+
+        .green {
+            padding-left: 45%;
+            background-color: green;
+        }
+
+        .red {
+            padding-left: 45%;
+            background-color: red;
+        }
+    </style>
+
+
+
+
+    <div id="numbers"></div>
+
+    <script>
+        const data = [34, 67, 49, 20, 23, 56, 90, 1000, 78, 54, 50];
+        const numbersDiv = document.getElementById('numbers');
+
+
+        data.map(num => {
+            const numberElement = document.createElement('div');
+            numberElement.className = 'number';
+            numberElement.textContent = num;
+            if (num > 50) {
+                numberElement.classList.add('green');
+            } else {
+                numberElement.classList.add('red')
+            }
+            numbersDiv.appendChild(numberElement)
+        })
+    </script>
+</body>
+
+</html>
